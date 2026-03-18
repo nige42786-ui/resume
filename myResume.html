@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷 - AU114018081</title>
+    <style>
+        /* CSS 部分：負責外觀美化 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        .student-id { color: #7f8c8d; font-size: 1.1em; }
+        section { margin-bottom: 25px; }
+        h2 { color: #3498db; border-left: 5px solid #3498db; padding-left: 10px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid #ecf0f1; }
+        
+        /* JavaScript 互動按鈕樣式 */
+        #contact-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        #contact-btn:hover { background-color: #2980b9; }
+        #contact-info { margin-top: 15px; display: none; font-weight: bold; color: #e67e22; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>亞洲大學學生 - 個人履歷</h1>
+        <div class="student-id">學號：AU114018081</div>
+    </header>
+
+    <section>
+        <h2>關於我</h2>
+        <p>你好！我是亞洲大學的學生。目前正在學習資訊科技應用，這是我使用 HTML、CSS 與 JavaScript 網頁技術製作的第一份線上履歷。</p>
+    </section>
+
+    <section>
+        <h2>技能專長</h2>
+        <ul>
+            <li><strong>網頁開發：</strong> HTML5, CSS3, 基礎 JavaScript</li>
+            <li><strong>工具使用：</strong> VS Code, Git, GitHub</li>
+            <li><strong>其他：</strong> 資訊科技問題解決、持續學習新技術</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>教育背景</h2>
+        <ul>
+            <li>亞洲大學 (Asia University) - 在學中</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>聯絡資訊</h2>
+        <button id="contact-btn">點擊顯示聯絡方式</button>
+        <div id="contact-info">
+            Email: AU114018081@asia.edu.tw <br>
+            GitHub: https://github.com/ (請填寫你的帳號)
+        </div>
+    </section>
+</div>
+
+<script>
+    /* JavaScript 部分：負責網頁互動 */
+    const btn = document.getElementById('contact-btn');
+    const info = document.getElementById('contact-info');
+
+    btn.addEventListener('click', function() {
+        if (info.style.display === 'none' || info.style.display === '') {
+            info.style.display = 'block';
+            btn.textContent = '隱藏聯絡方式';
+        } else {
+            info.style.display = 'none';
+            btn.textContent = '點擊顯示聯絡方式';
+        }
+    });
+</script>
+
+</body>
+</html>
