@@ -101,7 +101,7 @@
 <body>
 
 <div class="resume-card">
-    <img src="pro.jpg" alt="個人照" class="profile-pic">
+    <img src="pro.jpg.JPG" alt="個人照" class="profile-pic">
 
     <h1>個人履歷表</h1>
     <div class="student-id">學號：114018081</div>
@@ -129,3 +129,22 @@
     </div>
 
     <button class="btn" onclick="alert('感謝您的參訪！')">聯繫我</button>
+</div>
+
+<audio id="bgm" autoplay loop playsinline>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const audio = document.getElementById("bgm");
+    audio.play().catch(() => {
+        audio.muted = true;
+        audio.play();
+        setTimeout(() => {
+            audio.muted = false;
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
