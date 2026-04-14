@@ -6,54 +6,32 @@
     <title>個人履歷 - 114018081</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             background-color: #2c3e50;
             background-image: radial-gradient(circle at 50% 50%, #34495e 0%, #2c3e50 100%);
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            margin: 0; padding: 40px 20px;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
 
         .resume-card {
             background: rgba(255, 255, 255, 0.98);
-            width: 100%;
-            max-width: 450px;
-            padding: 50px 40px;
-            border-radius: 24px;
+            width: 100%; max-width: 450px;
+            padding: 50px 40px; border-radius: 24px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
+            text-align: center; animation: fadeIn 0.8s ease-out;
             position: relative;
         }
 
         .resume-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 6px;
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
             background: linear-gradient(90deg, #3498db, #9b59b6);
         }
 
-        .profile-pic {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-            transition: 0.3s;
-        }
-        .profile-pic:hover { transform: scale(1.05); }
-
+        .profile-pic { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); margin-bottom: 15px; }
         h1 { color: #2c3e50; margin: 10px 0 5px 0; font-size: 26px; }
         .student-id { color: #7f8c8d; font-size: 14px; margin-bottom: 15px; letter-spacing: 2px; }
         .motto { font-style: italic; color: #95a5a6; margin-bottom: 25px; font-size: 14px; }
@@ -66,33 +44,37 @@
         .email-link { color: #3498db; text-decoration: none; }
 
         .btn {
-            background-color: #34495e;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            background-color: #34495e; color: white; border: none; padding: 14px;
+            border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer;
+            transition: 0.3s; width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px;
         }
         .btn:hover { background-color: #2c3e50; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* --- 彈窗樣式 --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); display: none;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-box {
+            background: white; padding: 30px; border-radius: 20px;
+            width: 300px; text-align: center; animation: scaleUp 0.3s ease-out;
+        }
+        .modal-box h2 { margin: 0 0 15px 0; color: #2c3e50; font-size: 20px; }
+        .modal-box p { color: #636e72; margin-bottom: 20px; }
+        .close-btn {
+            background: #3498db; color: white; border: none;
+            padding: 10px 20px; border-radius: 8px; cursor: pointer;
+        }
     </style>
 </head>
 <body onclick="startMusic()">
 
 <div class="resume-card">
     <img src="pro.jpg.JPG" alt="個人照" class="profile-pic">
-
     <h1>個人履歷表</h1>
-    <div class="student-id">學號 : 114018081</div>
-    
-    <p class="motto">"Believe you can and you're halfway there."</p>
+    <div class="student-id">ID: 114018081</div>
+    <p class="motto"> "Believe you can and you're halfway there." </p>
 
     <div class="info-section">
         <div class="info-item">
@@ -102,7 +84,6 @@
                 <p class="text">亞洲大學 聽力暨語言治療學系 (一年級)</p>
             </div>
         </div>
-
         <div class="info-item">
             <i class="fas fa-id-card"></i>
             <div class="item-content">
@@ -110,7 +91,6 @@
                 <p class="text">女性 ｜ 十八歲</p>
             </div>
         </div>
-
         <div class="info-item">
             <i class="fas fa-envelope"></i>
             <div class="item-content">
@@ -118,27 +98,34 @@
                 <p class="text"><a href="mailto:nige42786@gmail.com" class="email-link">nige42786@gmail.com</a></p>
             </div>
         </div>
-
         <div class="info-item">
             <i class="fas fa-user"></i>
             <div class="item-content">
                 <span class="label">個人簡介</span>
-                <p class="text">目前為亞大聽語系大一學生。透過資訊科技課程，我掌握了網頁開發與 GitHub 部署技巧，熱衷於結合專業與科技解決問題。</p>
+                <p class="text">目前為亞大聽語系大一學生。透過資訊與科技課程掌握了網頁開發與 GitHub 部署技巧。</p>
             </div>
         </div>
-
         <div class="info-item">
             <i class="fas fa-star"></i>
             <div class="item-content">
                 <span class="label">專業專長</span>
-                <p class="text">電腦文書處理 (MS Office)、基礎網頁製作、Git 版本控制。</p>
+                <p class="text">電腦文書處理 (MS Office)、基礎網頁製作。</p>
             </div>
         </div>
     </div>
 
-    <button class="btn">
+    <button class="btn" onclick="openModal(event)">
         <i class="fas fa-paper-plane"></i> 歡迎聯繫我
     </button>
+</div>
+
+<div class="modal-overlay" id="contactModal">
+    <div class="modal-box">
+        <i class="fas fa-check-circle" style="color: #2ecc71; font-size: 40px; margin-bottom: 10px;"></i>
+        <h2>聯絡資訊</h2>
+        <p>Email: nige42786@gmail.com<br>很高興認識妳！</p>
+        <button class="close-btn" onclick="closeModal()">關閉</button>
+    </div>
 </div>
 
 <audio id="bgm" loop playsinline>
@@ -147,15 +134,22 @@
 
 <script>
     const audio = document.getElementById("bgm");
+    const modal = document.getElementById("contactModal");
+
+    // 音樂控制
     window.addEventListener('load', () => {
         audio.muted = true;
-        audio.play().then(() => {
-            setTimeout(() => { audio.muted = false; }, 500);
-        }).catch(err => console.log("等待點擊播放"));
+        audio.play().then(() => { setTimeout(() => { audio.muted = false; }, 500); });
     });
-    function startMusic() {
-        audio.muted = false;
-        audio.play();
+    function startMusic() { audio.muted = false; audio.play(); }
+
+    // 彈窗控制
+    function openModal(e) {
+        e.stopPropagation(); // 防止觸發 startMusic
+        modal.style.display = 'flex';
+    }
+    function closeModal() {
+        modal.style.display = 'none';
     }
 </script>
 
