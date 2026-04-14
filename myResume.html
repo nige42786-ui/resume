@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人履歷 - 114018081</title>
     <style>
-        /* 整體美編：漸層背景 */
+        /* 1. 背景改為簡約的淺暖灰色，看起來更專業舒適 */
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+            background-color: #f0f2f5; 
             margin: 0;
             padding: 40px 20px;
             display: flex;
@@ -17,118 +17,109 @@
             min-height: 100vh;
         }
 
-        /* 履歷卡片 */
+        /* 2. 履歷卡片優化：細緻的陰影與白淨的背景 */
         .resume-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: #ffffff;
             width: 100%;
             max-width: 480px;
             padding: 50px 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .resume-card:hover {
-            transform: translateY(-5px);
         }
 
         /* 照片樣式 */
         .profile-pic {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid #f0f2f5;
             margin-bottom: 20px;
-            background-color: #f0f0f0;
         }
 
         h1 {
-            color: #2d3436;
+            color: #1a1a1a;
             margin: 10px 0 5px 0;
-            font-size: 28px;
-            letter-spacing: 2px;
+            font-size: 26px;
+            font-weight: 600;
         }
 
         .student-id {
-            background: #0984e3;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 14px;
-            margin-bottom: 25px;
-            font-weight: bold;
+            color: #5f6368;
+            font-size: 15px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
         }
 
         .info-section {
             text-align: left;
-            border-top: 1px solid #dfe6e9;
+            border-top: 1px solid #eee;
             padding-top: 25px;
         }
 
         .info-item {
-            margin-bottom: 18px;
-            color: #636e72;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #3c4043;
+            line-height: 1.7;
         }
 
         .label {
-            font-weight: bold;
-            color: #2d3436;
+            font-weight: 600;
+            color: #202124;
             display: block;
-            margin-bottom: 5px;
-            font-size: 16px;
+            margin-bottom: 4px;
+            font-size: 15px;
+            color: #1a73e8; /* 標籤使用專業藍色小點綴 */
         }
 
         .email-link {
-            color: #0984e3;
+            color: #1a73e8;
             text-decoration: none;
-            font-weight: 500;
         }
 
+        /* 3. 按鈕改為深色系，增加沉穩感 */
         .btn {
-            background-color: #6c5ce7;
+            background-color: #202124;
             color: white;
             border: none;
             padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
             cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 15px;
+            transition: 0.2s;
+            margin-top: 10px;
             width: 100%;
         }
 
         .btn:hover {
-            background-color: #a29bfe;
+            background-color: #3c4043;
         }
     </style>
 </head>
 <body>
 
 <div class="resume-card">
-    <img src="pro.jpg.JPG" alt="個人照" class="profile-pic">
+    <img src="pro.jpg" alt="個人照" class="profile-pic">
 
     <h1>個人履歷表</h1>
     <div class="student-id">學號：114018081</div>
 
     <div class="info-section">
         <div class="info-item">
-            <span class="label">基本資料</span>
-            十八歲 ｜ 亞洲大學
+            <span class="label">學歷背景</span>
+            亞洲大學 聽力暨語言治療學系 (一年級)
         </div>
-        
+
         <div class="info-item">
-            <span class="label">聯絡信箱</span>
-            <a href="mailto:nige42786@gmail.com" class="email-link">nige42786@gmail.com</a>
+            <span class="label">基本資料</span>
+            十八歲 ｜ nige42786@gmail.com
         </div>
 
         <div class="info-item">
             <span class="label">個人簡介</span>
-            我是亞洲大學的學生，目前正在學習資訊科技應用。透過課堂練習，我掌握了基礎的網頁前端開發技巧，並能靈活運用雲端工具進行作品發佈。
+            目前正在學習資訊科技與應用。透過這堂課，我掌握了基礎的網頁開發技巧，並能實作個人網頁的部署與維護。
         </div>
 
         <div class="info-item">
@@ -137,23 +128,4 @@
         </div>
     </div>
 
-    <button class="btn" onclick="alert('歡迎來到我的個人網頁！')">聯繫我</button>
-</div>
-
-<audio id="bgm" autoplay loop playsinline>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-    const audio = document.getElementById("bgm");
-    audio.play().catch(() => {
-        audio.muted = true;
-        audio.play();
-        setTimeout(() => {
-            audio.muted = false;
-        }, 100);
-    });
-</script>
-
-</body>
-</html>
+    <button class="btn" onclick="alert('感謝您的參訪！')">聯繫我</button>
